@@ -1,8 +1,13 @@
+import { styled } from "./styles/stitches.config"
+
 function App() {
+  const TitleExample = styled('h1', {
+    color: '$text'
+  })
 
   return (
     <div className="App">
-      <h2>Stitches</h2>
+      <TitleExample>Stitches</TitleExample>
     </div>
   )
 }
