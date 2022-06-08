@@ -9,17 +9,17 @@ type Props = [
 
 export function useThemeStorage(): Props {
   const [theme, setTheme] = useState<string>(light);
-
+  
   useEffect(() => {
     const storageValue = localStorage.getItem('stitches@theme');
-    (() => {
-      setTheme(storageValue === 'light' ? light : dark);
 
-      if (storageValue === null) {
-        setTheme(light);
-        localStorage.setItem('stitches@theme', 'light');
-      }
-    })();
+    if (storageValue === null) {
+      setTheme(light);
+      localStorage.setItem('stitches@theme', 'light');
+    } else {
+      setTheme(storageValue === 'light' ? light : dark);
+    }
+
   }, []);
 
   function toggleTheme() {

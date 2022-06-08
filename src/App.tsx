@@ -20,6 +20,7 @@ function App() {
         size='lg'
         isChecked={theme === dark}
         onChange={() => toggleTheme()}
+        colorScheme='green'
       />
     </div>
   )
